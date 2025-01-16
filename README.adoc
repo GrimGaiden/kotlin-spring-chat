@@ -309,7 +309,7 @@ CREATE TABLE IF NOT EXISTS messages (
 
 image::./images/schema-sql-location.png[]
 
-Also, you should modify `application.properties` so it contains the following attributes:
+Also, you should modify `application.yaml` so it contains the following attributes:
 
 [source,properties]
 -----
@@ -1008,7 +1008,7 @@ class Config {
 
 The above configuration ensures that the table's schema is initialized when the application starts up.
 
-Next, we need to modify the properties in `application.properties` to include just one attribute:
+Next, we need to modify the properties in `application.yaml` to include just one attribute:
 
 
 [source,properties]
@@ -1255,7 +1255,7 @@ class HtmlController() {
 
 Note that the UI template is now `chatrs.html` instead of `chat.html`. The new template includes the JavaScript code that configures a _WebSocket_ connection and interacts directly with the `api.v1.messages.stream` endpoint implemented by the `MessageResource` class.
 
-We need to make one last change to the `application.properties` file for RSocket to work properly. Add the following properties to the configuration:
+We need to make one last change to the `application.yaml` file for RSocket to work properly. Add the following properties to the configuration:
 
 [source,properties]
 -----
