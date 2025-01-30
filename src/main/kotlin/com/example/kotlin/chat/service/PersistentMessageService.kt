@@ -1,5 +1,6 @@
 package com.example.kotlin.chat.service
 
+import com.example.kotlin.chat.asDomainObject
 import com.example.kotlin.chat.mapToViewModel
 import com.example.kotlin.chat.repository.ContentType
 import com.example.kotlin.chat.repository.Message
@@ -15,9 +16,7 @@ class PersistentMessageService(val messageRepository: MessageRepository): Messag
             .mapToViewModel()
 
     override fun post(message: MessageVM) {
-        messageRepository.save(
-            with(message) { Message(content, ContentType.PLAIN, sent,
-                user.name, user.avatarImageLink.toString()) }
+        messageRepository.save(message.asDomainObject()
         )
     }
 }

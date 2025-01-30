@@ -14,5 +14,5 @@ val userAvatarImageLink: String,
 @Id var id: String? = null)
 
 enum class ContentType {
-    PLAIN
+    PLAIN, MARKDOWN
 }
