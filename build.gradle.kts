@@ -38,9 +38,13 @@ dependencies {
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactive")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 
+	implementation("org.springframework.boot:spring-boot-starter-rsocket")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}
+
+	testImplementation("app.cash.turbine:turbine:0.3.0")
 }
 
 tasks.withType<Test> {
